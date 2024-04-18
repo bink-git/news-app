@@ -17,6 +17,7 @@ const Main = () => {
     try {
       setIsLoading(true);
       const response = await getNews(currentPage, pageSize);
+      console.log(response);
       setNews(response.news);
       setIsLoading(false);
     } catch (error) {
