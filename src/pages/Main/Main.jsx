@@ -66,6 +66,14 @@ const Main = () => {
       ) : (
         <Skeleton count={10} type={'item'} />
       )}
+
+      <Pagination
+        totalPages={totalPages}
+        handleNextPage={handleNextPage}
+        handlePreviousPage={handlePreviousPage}
+        handlePageClick={handlePageClick}
+        currentPage={currentPage}
+      />
     </main>
   );
 };
