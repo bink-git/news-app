@@ -17,6 +17,7 @@ const Main = () => {
     try {
       setIsLoading(true);
       const response = await getNews(currentPage, pageSize);
+      console.log(response);
       setNews(response.news);
       setIsLoading(false);
     } catch (error) {
@@ -65,6 +66,14 @@ const Main = () => {
       ) : (
         <Skeleton count={10} type={'item'} />
       )}
+
+      <Pagination
+        totalPages={totalPages}
+        handleNextPage={handleNextPage}
+        handlePreviousPage={handlePreviousPage}
+        handlePageClick={handlePageClick}
+        currentPage={currentPage}
+      />
     </main>
   );
 };
