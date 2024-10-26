@@ -1,14 +1,17 @@
 import NewsHeader from '../../components/NewsHeader/NewsHeader';
-import styles from './styles.module.css';
-import { getCategories, getNews } from '../../api/apiNews';
 import NewsList from '../../components/NewsList/NewsList';
 import Pagination from '../../components/Pagination/Pagination';
 import Categories from '../../components/Categories/Categories';
 import Search from '../../components/Search/Search';
-import { useDebounce } from '../../helpers/hooks/useDebounce';
+
+import { getCategories, getNews } from '../../api/apiNews';
 import { TOTAL_PAGES, PAGE_SIZE } from '../../constants/constants';
+
+import { useDebounce } from '../../helpers/hooks/useDebounce';
 import { useFetch } from '../../helpers/hooks/useFetch';
 import { useFilters } from '../../helpers/hooks/useFilter';
+
+import styles from './styles.module.css';
 
 const Main = () => {
   const { filters, changeFilters } = useFilters({
