@@ -1,5 +1,5 @@
 import { formatTimeAgo } from '../../helpers/formatTimeAgo';
-import withSkeleton from '../../helpers/hocs/withSkeleton';
+
 import Image from '../Image/Image';
 import styles from './styles.module.css';
 
@@ -15,6 +15,4 @@ const NewsHeader = ({ item }) => {
   );
 };
 
-const NewsHeaderWithSkeleton = withSkeleton(NewsHeader, 'banner', 1);
-
-export default NewsHeaderWithSkeleton;
+export default NewsHeader;
