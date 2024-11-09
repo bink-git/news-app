@@ -1,9 +1,25 @@
 import styles from './styles.module.css';
 
 const Categories = ({ categories, setSelectedCategory, selectedCategory }) => {
+  const colors = [
+    '#ffd0e0',
+    '#eebec3',
+    '#eed4db',
+    '#dac7eb',
+    '#bcd4e9',
+    '#d5f3d4',
+    '#f7dac6',
+  ];
   return (
     <div className={styles.categories}>
-      {categories.map((category) => {
+      <button
+        onClick={() => setSelectedCategory(null)}
+        className={!selectedCategory ? styles.active : styles.item}
+      >
+        All
+      </button>
+      {categories.map((category, index) => {
+        const color = colors[index % colors.length];
         const categoryCap =
           category.charAt(0).toUpperCase() + category.slice(1);
         return (
@@ -13,6 +29,11 @@ const Categories = ({ categories, setSelectedCategory, selectedCategory }) => {
             className={
               selectedCategory === category ? styles.active : styles.item
             }
+            style={{
+              backgroundColor:
+                selectedCategory === category ? '#e7e7ff' : color,
+              color: selectedCategory === category ? '#6b4eff' : 'inherit',
+            }}
           >
             {categoryCap}
           </button>
