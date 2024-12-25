@@ -1,0 +1,14 @@
+.slider {
+  display: flex;
+  width: 100%;
+  gap: 8px;
+  align-items: center;
+  scroll-behavior: smooth;
+}
+
+.arrow {
+  padding: 8px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
